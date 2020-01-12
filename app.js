@@ -33,10 +33,6 @@ app.get("/", async (req, res) => {
 		res.render("home", {count: count})
 		
      })
-    
-
-    // res.render("home")
-
 
 })
 
@@ -44,16 +40,16 @@ app.get("/", async (req, res) => {
 app.post("/register", async (req, res) => {
 	// console.log("Email is "+ req.body.email)
 	
-	var person = { email: req.body.email }
+	var new_user = { email: req.body.email }
+	console.log(new_user)
 	
-	connection.query("INSERT INTO users SET ?", person, function(error, results) {
+	connection.query("INSERT INTO users SET ?", new_user, function(error, results) {
 		if(error) throw error
 		
-		// res.send("Thanks for join our wait list")
-		res.redirect("/")
-		
+		res.send("Thanks for joining our wait list! See you soon")
+		// res.redirect("/")	
 	})
-	
+
 	
 })
 
