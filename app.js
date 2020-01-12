@@ -10,31 +10,32 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + "/public"))
 
 
-// var connection = mysql.createConnection({
-// 	host: "localhost",
-// 	user: "root",
-// 	database: "join_us"
-// })
+var connection = mysql.createConnection({
+	host: "eu-cdbr-west-02.cleardb.net",
+	user: "bbe869b94a9a54",
+	password: "4c9c6e53",
+	database: "heroku_1b60244069df935"
+})
 
 
 
 
 app.get("/", async (req, res) => {
 	// Find count of users in DB
-	// var q = "SELECT COUNT(*) AS count FROM users"
+	var q = "SELECT COUNT(*) AS count FROM users"
 	
-	// connection.query(q, function(error, results) {
-	// 	if(error) throw error
-	// 	var count = results[0].count
-	// 	console.log(count)
+	connection.query(q, function(error, results) {
+		if(error) throw error
+		var count = results[0].count
+		console.log(count)
 		
 	// 	// res.send("We have " + count + " users in our DB!")
-	// 	res.render("home", {count: count})
+		res.render("home", {count: count})
 		
-    // })
+     })
     
 
-    res.render("home")
+    // res.render("home")
 
 
 })
