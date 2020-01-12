@@ -10,11 +10,11 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + "/public"))
 
 
-var connection = mysql.createConnection({
-	host: "localhost",
-	user: "root",
-	database: "join_us"
-})
+// var connection = mysql.createConnection({
+// 	host: "localhost",
+// 	user: "root",
+// 	database: "join_us"
+// })
 
 
 
@@ -77,7 +77,7 @@ app.get("/flex", async (req, res) => {
 })
 
 
-
-app.listen(3000, () => {
-	console.log("Server up running on port 3000")
+const PORT = process.env.PORT
+app.listen(PORT || 3000, () => {
+	console.log("Server up running on port: " + PORT)
 })
