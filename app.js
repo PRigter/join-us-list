@@ -35,7 +35,7 @@ app.get("/", async (req, res) => {
 	//  })
 	
 
-	res.render("home", {count: count})
+	res.render("home")
 
 })
 
@@ -44,7 +44,7 @@ app.post("/register", async (req, res) => {
 	// console.log("Email is "+ req.body.email)
 	
 	var new_user = { email: req.body.email }
-	console.log(new_user)
+	// console.log(new_user)
 	
 	connection.query("INSERT INTO users SET ?", new_user, function(error, results) {
 		if(error) throw error
