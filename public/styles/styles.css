@@ -1,15 +1,22 @@
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto", Tahoma, sans-serif;
 	text-align: center;
 	text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 	/* color: rgb(66,69,86); */
 	color: rgb(21, 67, 96 );
 	height: 100%;
-	background-image: url("https://i.imgur.com/yRA2sAM.jpg");
+	background-image: url("https://i.imgur.com/1xYqBZO.jpg");
 	background-size: cover;
 	background-position: center;
-	font-weight: 100;
+	font-weight: 120;
 }
+
+.modal {
+	font-weight: bold;
+	text-shadow: none;
+}
+
+
 
 
 /* * { box-shadow: inset 0 0 0 1px red !important; } */
@@ -21,26 +28,32 @@ body {
 	height: 100%;
 	width: 100%;
 	margin: 0, auto;
-	/* border: 1px solid yellow; */
 }
 
-.main-container {
-	/* max-width: 1800px; */
-	/* border: 1px solid orange; */
-	/* height: 30%; */
 
-}
 
 
 h1 	{
 	margin: 0;
-	font-size: 400px;
+	font-size: 300px;
 	line-height: 400px;
 	font-weight: 100;
 }
 
 
+.fa-check {
+	font-size: 280px;
+	color: rgb(	48, 112, 28);
+}
 
+h2 {
+	font-size: 150px;
+}
+
+.message {
+	font-size: 60px;
+
+}
 
 .lead-container {
     color: rgb(27, 79, 114); 
@@ -68,7 +81,7 @@ h1 	{
 	line-height: 1.5;
 	border: none;
 	border-bottom: 3px solid #ebebeb;
-	margin-top 100px;
+	margin-top: 100px;
 	width: 400px;
 	font-size: 2.6em;
 	color: rgb(179, 182, 183);
@@ -99,7 +112,47 @@ button {
 }
 
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.far {
+	font-weight: bold !important;
+	font-size: 30px;
+	padding-right: 15px;
+}
+
+.error-msg {
+	margin: auto;
+}
+
+.error-modal-footer {
+	justify-content: center;
+}
+
+
+.btn-submit {
+	/* width: auto; */
+	margin-left: 0px !important;
+	margin-top: .80rem;
+}
+
+
+
+/* Input Validation Styles */
+#registration-warning {
+	display: block;
+	height: 35px;
+}
+
+#reg-warning {
+	display: none;
+	border-radius: 5px;
+	border: 2px solid orange;
+}
+
+
+
+
+
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder { 
 	/* color: rgba(255,255,255,0.8); */
 	color: rgba(33, 47, 61,0.8);
 	text-align: center;
@@ -117,12 +170,15 @@ button:hover{
 
 
 
-
 /* MEDIA QUERY */
 
 @media (max-width: 1340px) {
 	h1 {
-		font-size: 280px; /* RESTORE to 280px */
+		font-size: 280px;
+	}
+
+	.success-message {
+		font-size: 60px;
 	}
 }
 
@@ -132,6 +188,18 @@ button:hover{
 	h1 {
 		font-size: 220px;
 	}
+
+	.fa-check {
+		font-size: 200px;
+	}
+
+	h2 {
+		font-size: 100px;
+	}
+
+	.success-message {
+		font-size: 50px;
+	}
 }
 
 
@@ -140,15 +208,40 @@ button:hover{
 	h1 {
 		font-size: 180px;
 	}
+
+	.fa-check {
+		font-size: 150px;
+	}
+
+	h2 {
+		font-size: 60px;
+	}
+
+	.success-message {
+		font-size: 40px;
+	}
 }
 
 
 /* Small devices - less than 768px */
 @media(max-width: 768px) {
 	
+	.fa-check {
+		font-size: 80px;
+	}
+
+
+	h2 {
+		font-size: 40px;
+	}
+
+	
+	.success-message {
+		font-size: 30px;
+	}
 
 	.flex-container {
-	justify-content: start;
+	justify-content: center;
 	}
 		
 	.main-container {
@@ -197,8 +290,8 @@ button:hover{
 
 
 
-	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		/* color: rgba(255,255,255,0.8); */
+	/* Chrome/Opera/Safari */
+	::-webkit-input-placeholder {
 		color: rgba(33, 47, 61,0.8);
 	}
 
